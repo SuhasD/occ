@@ -53,9 +53,11 @@ self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return cacheNames.filter(cacheName => !currentCaches.includes(cacheName));
+      console.log(cacheNames.filter(cacheName => !currentCaches.includes(cacheName)));
     }).then(cachesToDelete => {
       return Promise.all(cachesToDelete.map(cacheToDelete => {
         return caches.delete(cacheToDelete);
+        console.log(caches.delete(cacheToDelete));
       }));
     }).then(() => self.clients.claim())
   );
