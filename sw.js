@@ -106,17 +106,17 @@ self.addEventListener('activate', function(e) {
 self.addEventListener('fetch', function(e) {
   console.log('[ServiceWorker] Fetch', e.request.url);
 
-    event.respondWith(
-    caches.match(event.request).then(function(resp) {
-      return resp || fetch(event.request).then(function(response) {
-        return caches.open('v1').then(function(cache) {
-          cache.put(event.request, response.clone());
-          return response;
-        });  
-      });
-    });
-  );
-    
+  //   event.respondWith(
+  //   caches.match(event.request).then(function(resp) {
+  //     return resp || fetch(event.request).then(function(response) {
+  //       return caches.open('v1').then(function(cache) {
+  //         cache.put(event.request, response.clone());
+  //         return response;
+  //       });  
+  //     });
+  //   });
+  // );
+
   // var dataUrl = 'https://publicdata-weather.firebaseio.com/';
   // if (e.request.url.indexOf(dataUrl) === 0) {
   //   e.respondWith(
