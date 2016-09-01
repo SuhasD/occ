@@ -23,8 +23,8 @@ var MyApp = (function () {
         this.initializeApp();
         // set our app's pages
         this.pages = [
-            { title: 'Hello Ionic', component: hello_ionic_1.HelloIonicPage },
-            { title: 'My First List', component: list_1.ListPage }
+            { title: 'Home', component: hello_ionic_1.HelloIonicPage },
+            { title: 'PLP', component: list_1.ListPage }
         ];
     }
     MyApp.prototype.initializeApp = function () {
@@ -70,6 +70,17 @@ var ionic_angular_1 = require('ionic-angular');
 var HelloIonicPage = (function () {
     function HelloIonicPage(navController) {
         this.navController = navController;
+        this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
+            'american-football', 'boat', 'bluetooth', 'build'];
+        this.items = [];
+        for (var i = 1; i < 11; i++) {
+            this.items.push({
+                title: 'Product ' + i,
+                note: '',
+                icon: this.icons[Math.floor(Math.random() * this.icons.length)]
+            });
+        }
+        console.log(this.items);
     }
     HelloIonicPage = __decorate([
         core_1.Component({

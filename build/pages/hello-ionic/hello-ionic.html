@@ -3,12 +3,67 @@
     <button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Hello Ionic</ion-title>
+    <ion-title>OCC - Home</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding class="getting-started">
+
+
+  <ion-card>
+  <img src="images/3_en.jpg"/>
+  <ion-card-content>
+    <ion-card-title>
+      Hero Card
+      </ion-card-title>
+    <p>
+      The most popular industrial product ever, and largely
+      responsible for bringing the electronics to a mass audience.
+    </p>
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <img src="images/2_en.jpg"/>
+  <ion-card-content>
+    <ion-card-title>
+      Featured promo
+      </ion-card-title>
+  </ion-card-content>
+  <ion-row no-padding="">
+      <ion-col>
+        <button clear="" danger="" small="" class="disable-hover button button-clear button-small button-clear-danger button-icon-left" ng-reflect-small="" ng-reflect-clear=""><span class="button-inner">
+          <ion-icon name="star" role="img" class="ion-md-star" aria-label="star" ng-reflect-name="star"></ion-icon>
+          Add to Wishlist
+        </span><ion-button-effect style="left: 45px; transform: scale(1) translateZ(0px); height: 120.427px; width: 120.427px; margin-left: -60.2133px; margin-top: -60.2133px; top: 14.6406px; opacity: 0; transition: transform 312.842ms, opacity 218.99ms 93.8527ms;"></ion-button-effect></button>
+      </ion-col>
+      <ion-col text-center="">
+
+      </ion-col>
+      <ion-col text-right="">
+        <button clear="" danger="" small="" class="disable-hover button button-clear button-small button-clear-danger button-icon-left" ng-reflect-small="" ng-reflect-clear=""><span class="button-inner">
+          <ion-icon name="share-alt" role="img" class="ion-md-share-alt" aria-label="share alt" ng-reflect-name="share-alt"></ion-icon>
+          Share
+        </span><ion-button-effect></ion-button-effect></button>
+      </ion-col>
+    </ion-row>
+</ion-card>
+
+  <ion-list>
+    <ion-list-header>
+    Featured Categories
+  </ion-list-header>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-icon name="{{item.icon}}" item-left></ion-icon>
+      {{item.title}}
+      <div class="item-note" item-right>
+        {{item.note}}
+      </div>
+    </button>
+  </ion-list>
+
+
 
   <p>
     <button primary menuToggle>Toggle Menu</button>

@@ -47,11 +47,13 @@ self.addEventListener('install', function(event) {
   // );
 
   event.waitUntil(
-    caches.open('v2').then(function(cache) {
+    caches.open('v5').then(function(cache) {
       return cache.addAll([
         '/',
         'index.html',
         'build/css/app.ios.css',
+        'images/2_en.jpg',
+        'images/3_en.jpg',
         'build/css/app.md.css',
         'build/css/app.wp.css',
         'build/fonts/ionicons.ttf',
