@@ -75,7 +75,7 @@ var HelloIonicPage = (function () {
         this.items = [];
         for (var i = 1; i < 11; i++) {
             this.items.push({
-                title: 'Product ' + i,
+                title: 'Category ' + i,
                 note: '',
                 icon: this.icons[Math.floor(Math.random() * this.icons.length)]
             });
