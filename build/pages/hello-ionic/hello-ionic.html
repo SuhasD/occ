@@ -54,7 +54,7 @@
     <ion-list-header>
     Featured Categories
   </ion-list-header>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+    <button ion-item *ngFor="let item of items">
       <ion-icon name="{{item.icon}}" item-left></ion-icon>
       {{item.title}}
       <div class="item-note" item-right>
