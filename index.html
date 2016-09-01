@@ -19,12 +19,29 @@
   <link md-href="build/css/app.md.css" rel="stylesheet">
   <link wp-href="build/css/app.wp.css" rel="stylesheet"> 
 
+
   <script>
-  if('serviceWorker' in navigator) {
-    navigator.serviceWorker
-             .register('sw.js')
-             .then(function() { console.log('Service Worker Registered'); });
-  }
+    if ('serviceWorker' in navigator) {
+      // navigator.serviceWorker.register('sw.js', { insecure: true }).then((registration) => { 
+      //   // Registration was successful 
+      //   console.log('ServiceWorker registration successful with scope: ', registration.scope);
+
+      // }).catch((err) => {
+      //    // registration failed 
+      //    console.log('ServiceWorker registration failed: ', err); });
+
+    console.log('Service Worker is supported');
+    navigator.serviceWorker.register('sw.js').then(function(reg) {
+        console.log(':^)', reg);
+        reg.pushManager.subscribe({
+            userVisibleOnly: true
+        }).then(function(sub) {
+            console.log('endpoint:', sub.endpoint);
+        });
+    }).catch(function(error) {
+        console.log(':^(', error);
+    });
+    }
   </script>
    
 </head>
